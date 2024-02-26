@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud</title>
+    <link
+      rel="shortcut icon"
+      href="images/power-plant.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body style="background-color: #1c2532">
+
+
+    <div class="crud w-75 mx-auto rounded p-3 mt-5">
+      <h1 class="text-center text-white">CRUD SYSTEM</h1>
+
+      <div class="mb-3">
+        <label class="text-white mb-2 fs-6" for="productNameInput"
+          >Product Name:</label
+        >
+        <input class="form-control" type="text" id="productNameInput" />
+      </div>
+
+      <div class="mb-3">
+        <label class="text-white mb-2 fs-6" for="productPriceInput"
+          >Product Price:</label
+        >
+        <input class="form-control" type="number" id="productPriceInput" />
+      </div>
+
+      <div class="mb-3">
+        <label class="text-white mb-2 fs-6" for="productCategoryInput"
+          >Product Category:</label
+        >
+        <input class="form-control" type="text" id="productCategoryInput" />
+      </div>
+
+      <div class="mb-3">
+        <label class="text-white mb-2 fs-6" for="productDescraptionInput"
+          >Product Descraption:</label
+        >
+        <textarea class="form-control" id="productDescraptionInput" rows="3"></textarea>
+      </div>
+
+      <button
+        id="addBtn"
+        onclick="addProduct();"
+        class="btn bg-primary mt-3 w-100 text-white"
+      >
+        Add Product
+      </button>
+
+      <button
+        id="UpdateBtn"
+        onclick="setData()"
+        class="btn bg-primary mt-3 w-100 text-white d-none"
+      >
+        Update Product
+      </button>
+
+      <input
+        id="searchInput"
+        oninput="searchProduct()"
+        type="search"
+        placeholder="Search by Name..."
+        class="form-control w-50 mx-auto my-3"
+      />
+
+      <div class="table-responsive my-4 rounded">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+              <th scope="col">Descraption</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/crud.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
